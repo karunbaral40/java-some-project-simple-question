@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataType/DataType.iml" filepath="$PROJECT_DIR$/DataType/DataType.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operators/Operators.iml" filepath="$PROJECT_DIR$/Operators/Operators.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrintStatement/PrintStatement.iml" filepath="$PROJECT_DIR$/PrintStatement/PrintStatement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/chatgptQustionForJava.iml" filepath="$PROJECT_DIR$/.idea/chatgptQustionForJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coditions/coditions.iml" filepath="$PROJECT_DIR$/coditions/coditions.iml" />
+    </modules>
+  </component>
+</project>
