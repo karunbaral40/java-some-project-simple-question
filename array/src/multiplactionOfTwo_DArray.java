@@ -1,5 +1,6 @@
 public class multiplactionOfTwo_DArray {
     public static void main(String[] args) {
+        // write a program to multiplaction of the array numbers in the array
         int[][]num1={{2,3,4},
                 {4,5,6}};
         int[][]num2={{4,5,6},

@@ -1,5 +1,6 @@
 public class GivenTheNumberIsinTheArrayOrNot {
     public static void main(String[] args) {
+        // write a program to find the given number is in array in not.
         int[] num = {10, 12, 33, 63, 44, 55, 43, 52};
         boolean isIn = false;
         for (int element : num) {

@@ -1,5 +1,6 @@
 public class AddtwoMatrix {
     public static void main(String[] args) {
+        //write a program to add 2two 2*3 matrix
         int[][] a= {{1, 2, 3},
                 {2, 3, 4}};
         int[][] b= {{3, 2, 1},

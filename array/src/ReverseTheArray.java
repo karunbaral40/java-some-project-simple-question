@@ -1,5 +1,6 @@
-public class ReuurseTheArray {
+public class ReverseTheArray {
     public static void main(String[] args) {
+        //write a program to reverse the num of array
         int[]arr={1,2,4,5,3,5,6};
         int l=arr.length;
         int a=Math.floorDiv(l,2);

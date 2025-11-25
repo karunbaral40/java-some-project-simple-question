@@ -1,5 +1,6 @@
 public class AvgNumber {
     public static void main(String[] args) {
+        //write a program to find a average of given array
         int []num={15,12,13,31,21,34};
         int sum=0;
 

@@ -1,5 +1,6 @@
 public class FindArrayIsSortedOrNot {
     public static void main(String[] args) {
+        //write a program to find the array is sorted or not.
         int []arr={12,11,13,14,15};
         boolean isSorted=true;
         for (int i = 0; i < arr.length-1; i++) {
