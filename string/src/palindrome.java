@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class palindrome {
+    //write a program to show the palindrome number in java
     public static void main(String[] args) {
 
             Scanner sc = new Scanner(System.in);

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class miniCalculator {
+    //write a program to make mini calculator in java using break statent.
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

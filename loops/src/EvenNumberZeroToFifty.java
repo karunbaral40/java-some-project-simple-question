@@ -1,7 +1,7 @@
 public class EvenNumberZeroToFifty {
     public static void main(String[] args) {
 
-                //print even numbers from 1 to 50 using a loop.
+                // write a program to print even numbers from 1 to 50 using a loop.
 //        System.out.println("using for loop");
 //        for (int i = 0; i <= 50; i+=2) {
 //            System.out.println(" Even number 0 to 50 :"+ i);

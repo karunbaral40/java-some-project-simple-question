@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//write a program to to calculate fabonish series using method
 public class FabonishSeriesMethod {
     static int fabonish(int x){
         int a=1;

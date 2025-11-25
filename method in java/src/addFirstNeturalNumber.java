@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class addFirstNeturalNumber {
+    //write a program to add first natural number up to n using object
     static int netural(int a){
      int sum=0;
         for (int i = 1; i <=a ; i++) {

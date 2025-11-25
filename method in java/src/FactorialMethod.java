@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//write a program to to calculate factriol using method
 public class FactorialMethod {
     static int factriol(int a){
         int mul=1;

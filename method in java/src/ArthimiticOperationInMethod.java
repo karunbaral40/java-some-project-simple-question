@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class ArthimiticOperationInMethod {
+    ////write a program to using arthimetic operation in java
     static int sum(int a , int b){
         int s=a+b;
         return s;
