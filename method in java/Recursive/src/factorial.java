@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class factorial {
+    //write a program to show the factorial using recursive.
     static int factorial(int n){
         if(n==0||n==1){
             return 1;
