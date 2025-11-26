@@ -1,4 +1,5 @@
 public class SumUsingVariableArgumentOneValueIsContent {
+    //write a program to add numbers without limits using variable argument whare one number is consent(x).
     static int sum(int x ,int... a){
         int result=x;
         for(int value:a){
