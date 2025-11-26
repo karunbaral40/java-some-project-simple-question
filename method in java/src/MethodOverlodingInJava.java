@@ -9,7 +9,7 @@ public class MethodOverlodingInJava {
     static void simple(int a,int b){
         System.out.println("hello "+a+" boys and "+b+" girls!");
 
-
+//write a program to show the method of method overloading
     }
 
     public static void main(String[] args) {
