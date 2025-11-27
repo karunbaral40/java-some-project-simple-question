@@ -2,10 +2,12 @@ import java.util.Scanner;
 public class FibonacciSeriesUsingRecursive {
     //write a program to show the Fibonacci Series Using Recursive
     static int recursive(int n){
-        if (n == 0) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
+//        if (n == 0) {
+//            return 0;
+//        } else if (n == 1) {
+//            return 1;
+        if(n==0||n==1){
+            return n-1;
         } else {
             return recursive(n - 1) + recursive(n - 2); // recursion
         }

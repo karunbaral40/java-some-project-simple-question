@@ -12,7 +12,7 @@ public class SumOfNNaturalNumber {
 //                System.out.println("sum is :" + sum);
 //
 //            }
-            //using recersion
+            //using reversion
             return num+sum(num-1);
 //            return sum;
         }
