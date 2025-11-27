@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class AvgUsingVarabileArgument {
+    //write a program to find an average of numbers using variable argument.
     static  int average(int... arr){
         int sum=0;
 
