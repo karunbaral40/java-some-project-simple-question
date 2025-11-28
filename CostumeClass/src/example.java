@@ -1,3 +1,4 @@
+//this is an example to how to create a costume class in java.
 class student{
     int id;
     String name;
@@ -9,5 +10,6 @@ public class example {
         detils.name="karun";
         System.out.println(detils.id);
         System.out.println(detils.name);
+
     }
 }
