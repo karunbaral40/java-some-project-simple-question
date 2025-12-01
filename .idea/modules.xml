@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CostumeClass/CostumeClass.iml" filepath="$PROJECT_DIR$/CostumeClass/CostumeClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataType/DataType.iml" filepath="$PROJECT_DIR$/DataType/DataType.iml" />
-      <module fileurl="file://$PROJECT_DIR$/EasyGames/EasyGames.iml" filepath="$PROJECT_DIR$/EasyGames/EasyGames.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EasyProject/EasyGames.iml" filepath="$PROJECT_DIR$/EasyProject/EasyGames.iml" />
       <module fileurl="file://$PROJECT_DIR$/Operators/Operators.iml" filepath="$PROJECT_DIR$/Operators/Operators.iml" />
       <module fileurl="file://$PROJECT_DIR$/loops/PattrenPrinting/PattrenPrinting.iml" filepath="$PROJECT_DIR$/loops/PattrenPrinting/PattrenPrinting.iml" />
       <module fileurl="file://$PROJECT_DIR$/PrintStatement/PrintStatement.iml" filepath="$PROJECT_DIR$/PrintStatement/PrintStatement.iml" />
