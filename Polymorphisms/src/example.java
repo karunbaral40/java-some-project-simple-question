@@ -11,9 +11,10 @@ class Circle extends Shape {
     }
 }
 
-public class Example {
+public class example {
     public static void main(String[] args) {
         Shape s = new Circle();  // dynamic binding
         s.draw();
     }
+
 }
