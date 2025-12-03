@@ -12,6 +12,7 @@ class Person{
         this.name=name;
         this.age=age;
         System.out.println("the name is : "+ name);
+        System.out.println("the  age is : "+ age);
 
     }
 
