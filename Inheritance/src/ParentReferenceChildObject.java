@@ -9,7 +9,7 @@ class Shape{
         System.out.println("drawing a shape....");
     }
 }
-class Circle extends Shape{
+class circle extends Shape{
     public void draw(){
         System.out.println("drawing a circle....");
         System.out.println("looks like it take about 365 days....");
@@ -19,7 +19,7 @@ class Circle extends Shape{
 }
 public class ParentReferenceChildObject {
     public static void main(String[] args) {
-Shape sp=new Circle();
+Shape sp=new circle();
 sp.draw();
     }
 }
