@@ -1,8 +1,16 @@
-// Create an abstract class Payment with:
-// A field amount (double).
-// A constructor to initialize amount.
-// A concrete method printReceipt() that prints "Payment of <amount> processed".
-// An abstract method processPayment() that each subclass must implement.
+//- Create an abstract class Payment with:
+//        - A field amount (double).
+//        - A constructor to initialize amount.
+//- A concrete method printReceipt() that prints "Payment of <amount> processed.".
+//        - An abstract method processPayment() that each subclass must implement.
+//        - Create three subclasses:
+//        - CreditCardPayment → prints "Processing credit card payment of <amount>."
+//        - PayPalPayment → prints "Processing PayPal payment of <amount>."
+//        - BankTransferPayment → prints "Processing bank transfer of <amount>."
+//        - In the main() method:
+//        - Create an array of Payment objects with different types.
+//- Loop through the array, call both processPayment() and printReceipt()
+
 
 abstract class Payments {
     double amount;
