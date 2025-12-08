@@ -31,8 +31,21 @@ public class BankManagement {
         Bank.setBalance(sc.nextDouble());
         System.out.println("enter the account number");
         Bank.setAccountNumber(sc.nextLong());
+if (Bank.getBalance()<0){
+    System.out.println("not valid !! balance is zero");
+}
+else {
+    System.out.println("enter the amount to withdraw");
+    float amount= sc.nextFloat();;
+    if(Bank.getBalance()<amount){
+        System.out.println("error!! not enough money");
+    }
+    else{
+        System.out.println("your amount has been withdraw" + amount);
+    }
 
+}
 
         }
     }
-}\
+
