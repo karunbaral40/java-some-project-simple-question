@@ -25,6 +25,10 @@ class Student extends Person {
         super(name, id);
         this.courseName = courseName;
     }
+    void printDetails(){
+        super.printDetails();
+        System.out.println("course name" + courseName);
+    }
 }
 class Staff extends Person {
     String depertmant;
