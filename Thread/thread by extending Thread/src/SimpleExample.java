@@ -4,6 +4,7 @@ class threads extends Thread {
         int i = 0;
         while (i < 1000) {
             System.out.println("hello its first");
+            i++;
         }
     }
 }
@@ -12,6 +13,7 @@ class threads2 extends Thread{
     int i=0;
     while(i<1000){
         System.out.println("hello its second");
+        i++;
     }
     }
 }
