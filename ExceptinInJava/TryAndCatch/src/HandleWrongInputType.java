@@ -2,7 +2,6 @@
 //If the user enters something that is not an integer (like “abc”),
 // catch the exception and print a friendly message.
 
-import com.sun.security.jgss.GSSUtil;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -5,7 +5,7 @@ public class RockPaperscissor {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("enter : \n 1 for rock \n 2 for paper \n3 for scissor");
-        int num1=sc.nextInt();
+            int num1 = sc.nextInt();
         Random num=new Random();
         int n=num.nextInt(1,4);
         System.out.println("computer choice:"+n);
