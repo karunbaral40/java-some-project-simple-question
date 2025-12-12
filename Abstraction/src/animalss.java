@@ -38,7 +38,7 @@ class Cow extends animal {
     }
 }
 
-public class Animal {
+public class animalss {
     public static void main(String[] args) {
 
         // Using abstract class reference
