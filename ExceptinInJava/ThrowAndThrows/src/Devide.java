@@ -17,7 +17,7 @@ public class Devide {
     }
 
     public static float divide(int a, int b) {
-        return (float) a / b;   
+        return (float) a / b;
     }
 
     public static void main(String[] args) {

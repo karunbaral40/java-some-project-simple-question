@@ -1,3 +1,9 @@
+//         1
+//        222
+//        33333
+//        4444444
+//        555555555
+
 public class NumbePyrimid {
     public static void main(String[] args) {
         int rows = 5;
