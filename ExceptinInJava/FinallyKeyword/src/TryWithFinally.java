@@ -1,3 +1,4 @@
+//❌wrong way
 public class TryWithFinally {
     public static void main(String[] args) {
       int  a=10;
