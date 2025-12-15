@@ -13,6 +13,7 @@ public class RockPaperscissor {
             System.out.println("the user wins!");
         }
         else if(num1==n){
+
             System.out.println("It's a draw!");
         }
         else{
