@@ -1,7 +1,7 @@
-//         *
-//        ***
-//        *****
-//        *******
+//            *
+//           ***
+//          *****
+//         *******
 //        *********
 public class starPyrimid {
     public static void main(String[] args) {
