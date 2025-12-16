@@ -52,7 +52,7 @@ public class CalculatorWithException {
             C.setNum2(sc.nextDouble());
             sc.nextLine();
         System.out.println("enter the operator");
-        C.setNum1(sc.nextInt());
+        C.setOp(sc.nextLine());
 
         }
 
