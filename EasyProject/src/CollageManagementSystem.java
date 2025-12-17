@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class collage{
@@ -5,6 +6,7 @@ class collage{
     String teacher_name;
     String course_name;
     String student_name;
+    String subject;
     int id;
     double salary;
     double fee;
@@ -20,6 +22,9 @@ class collage{
          System.out.println("the deatils of accountant");
          System.out.println("Name:"+student_name);
          System.out.println("student_id:"+id);
+         System.out.println("Name:"+course_name);
+         System.out.println("Courses_fee:"+fee);
+
      }
 
      void teacher(){
@@ -27,14 +32,9 @@ class collage{
          System.out.println("the deatils of accountant");
          System.out.println("Name:"+teacher_name);
          System.out.println("Salary:"+salary);
+         System.out.println("teaching Subject:"+subject);
      }
-    void courses(){
-        System.out.println("------------------------------------");
-        System.out.println("the deatils of accountant");
-        System.out.println("Name:"+course_name);
-        System.out.println("Courses_fee:"+fee);
 
-    }
         }
 
 
@@ -44,23 +44,64 @@ public class CollageManagementSystem {
         Scanner sc=new Scanner(System.in);
         System.out.println("enter the student number");
         int Stu_num= sc.nextInt();
+        sc.nextLine();
         System.out.println("enter the teacher number");
         int Tech_num= sc.nextInt();
-        System.out.println("enter the courses number");
-        int Cor_num= sc.nextInt();
-        System.out.println("enter the Accountent number");
+        sc.nextLine();
+        System.out.println("enter the Accountant number");
         int Acc_num= sc.nextInt();
+        sc.nextLine();
         collage C=new collage();
-        C.account();
-        C.student();
-        C.teacher();
-        C.courses();
+
+
+//getting student details
         for (int i = 0; i < Stu_num; i++) {
             System.out.println("enter the student name");
             C.student_name=sc.nextLine();
-            
+            System.out.println("enter the student ID");
+            C.id=sc.nextInt();
+            sc.nextLine();
+            System.out.println("enter the Course name");
+            C.course_name=sc.nextLine();
+            System.out.println("enter the fee of course");
+            C.fee=sc.nextDouble();
+            sc.nextLine();
+
         }
+        //getting teachers details
+        for (int i = 0; i < Tech_num; i++) {
+            System.out.println("enter the Teacher name");
+            C.teacher_name=sc.nextLine();
+            System.out.println("enter How subject this teacher teach");
+            int n=sc.nextInt();
+            sc.nextLine();
+            for (int j = 0; j <n ; j++) {
+            System.out.println("enter the teaching subject ");
+            C.subject=sc.nextLine();
+            }
+            System.out.println("enter the Salary of teacher");
+            C.salary=sc.nextDouble();
+            sc.nextLine();
+
+
+        }
+
+        //getting account details
+        for (int i = 0; i < Acc_num; i++) {
+            System.out.println("enter the accountant name");
+            C.accountant_name = sc.nextLine();
+            System.out.println("enter the salary of accountant");
+            C.salary = sc.nextDouble();
+            sc.nextLine();
+
+        }
+        C.student();
+        C.teacher();
+        C.account();
 
 
     }
-}
+
+
+    }
+
