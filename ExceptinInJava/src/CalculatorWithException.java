@@ -12,36 +12,30 @@ class InvalidInputException extends Exception {
     class Calculator{
         double num1;
         double num2;
+        double result;
         String op;
-        Scanner sc1=new Scanner(System.in);
-        public double getNum1() {
-
-            return num1;
-        }
-        public void setNum1(double num1) throws InvalidInputException{
-            this.num1 = num1;
-
-        }
-
-        public double getNum2() {
-
-            return num2;
-        }
-
-
-        public void setNum2(double num2)throws InvalidInputException {
-            this.num2 = num2;
-        }
-
-
-
-            public String getOp() {
-                return op;
+        Calculator(double  num1,double  num2,String op){
+            try {
+            if (op.equals("+")){
+                result=num1+num2;
+                System.out.println("sum:"+result);
+            } else if (op.equals("-")) {
+                result = num1-num2;
+                System.out.println("num1-num2:"+result);
+            } else if (op.equals("*")) {
+                result=num1*num2;
             }
 
-            public void setOp(String op) throws InvalidInputException{
-                this.op = op;
+                else {
+                    result=num1/num2;
+                    System.out.println("num1/num2:"+result);
             }
+            }
+            catch (ArithmeticException e){
+                System.out.println(e);
+            }
+
+        }
 
 
     }
@@ -51,23 +45,24 @@ class InvalidInputException extends Exception {
 public class CalculatorWithException {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-     Calculator C=new Calculator();
+
 
             try {
                 System.out.println("Enter the first number");
-                C.setNum1(sc.nextDouble());
+                double num1= sc.nextDouble();
                 sc.nextLine();
                 System.out.println("Enter the second number");
-                C.setNum2(sc.nextDouble());
+                double num2=sc.nextDouble();
                 sc.nextLine();
                 System.out.println("enter the operator");
-                C.setOp(sc.nextLine());
+                String Op=sc.nextLine();
 
+
+                Calculator C=new Calculator(num1,num2,Op);
             }
             catch (Exception e){
                 System.out.println(e);
             }
-
 
 
         }
