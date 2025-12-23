@@ -20,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/Interface/Interface.iml" filepath="$PROJECT_DIR$/Interface/Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/InterfacePrograms/InterfacePrograms.iml" filepath="$PROJECT_DIR$/InterfacePrograms/InterfacePrograms.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interface/Interfaces/Interfaces.iml" filepath="$PROJECT_DIR$/Interface/Interfaces/Interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CostumeClass/LinkList/LinkList.iml" filepath="$PROJECT_DIR$/CostumeClass/LinkList/LinkList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Operators/Operators.iml" filepath="$PROJECT_DIR$/Operators/Operators.iml" />
       <module fileurl="file://$PROJECT_DIR$/POlymorphism/POlymorphism.iml" filepath="$PROJECT_DIR$/POlymorphism/POlymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/loops/PattrenPrinting/PattrenPrinting.iml" filepath="$PROJECT_DIR$/loops/PattrenPrinting/PattrenPrinting.iml" />
