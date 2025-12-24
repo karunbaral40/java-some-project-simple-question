@@ -49,6 +49,7 @@ public class CollageManagementSystem {
                     addStudent();
                     break;
                 case 2:
+                    ViewStudents();
                     break;
                 case 3:
                     break;
@@ -76,7 +77,14 @@ public class CollageManagementSystem {
             }
 
             static void ViewStudents(){
-
+        if(student.isEmpty()){
+            System.out.println(" list is empty!!!");
+        }
+        else{
+            for(Student s:student){
+                System.out.println(s);
+            }
+        }
 
         }
     }
