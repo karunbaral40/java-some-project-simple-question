@@ -11,10 +11,9 @@ class Student{
         this.student_id=id;
         this.student_name=name;
        this.student_fee=fee;
-
     }
-
 }
+
 class courses{
     int teacher_id;
     String teacher_name;
@@ -32,38 +31,43 @@ public class CollageManagementSystem {
    static Scanner sc=new Scanner(System.in);
     public static void main(String[] args) {
 
-        int choice;
-        System.out.println("---------student details-------");
-        System.out.println("1. Add Student");
-        System.out.println("2. View Students");
-        System.out.println("3. Search Student");
-        System.out.println("4. Update Student");
-        System.out.println("5. Delete Student");
+        System.out.println("1.student \n2.teacher \n3. account");
+        int search = sc.nextInt();
+        if (search == 1) {
+            int choice;
+            System.out.println("---------student details-------");
+            System.out.println("1. Add Student");
+            System.out.println("2. View Students");
+            System.out.println("3. Search Student");
+            System.out.println("4. Update Student");
+            System.out.println("5. Delete Student");
 
-        do{
-            System.out.println("Enter your choice!");
-            choice=sc.nextInt();
-            switch (choice){
-                case 1:
-                    addStudent();
-                    break;
-                case 2:
-                    ViewStudents();
-                    break;
-                case 3:
-                    searchStudent();
-                    break;
-                case 4:
-                    updateStudent();
-                    break;
-                case 5:
-                    deleteStudent();
-                    break;
-                default:
-                    System.out.println("option doesn't exist");
-            }
+            do {
+                System.out.println("Enter your choice!");
+                choice = sc.nextInt();
+                switch (choice) {
+                    case 1:
+                        addStudent();
+                        break;
+                    case 2:
+                        ViewStudents();
+                        break;
+                    case 3:
+                        searchStudent();
+                        break;
+                    case 4:
+                        updateStudent();
+                        break;
+                    case 5:
+                        deleteStudent();
+                        break;
+                    default:
+                        System.out.println("option doesn't exist");
+                }
 
-        }while (choice!=6);
+            } while (choice != 6);
+
+        }
     }
         static void addStudent() {
             System.out.println("Enter the id");
