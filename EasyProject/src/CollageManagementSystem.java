@@ -39,7 +39,6 @@ public class CollageManagementSystem {
         System.out.println("3. Search Student");
         System.out.println("4. Update Student");
         System.out.println("5. Delete Student");
-        System.out.println("6. Exit");
 
         do{
             System.out.println("Enter your choice!");
@@ -55,12 +54,13 @@ public class CollageManagementSystem {
                     searchStudent();
                     break;
                 case 4:
+                    updateStudent();
                     break;
                 case 5:
+                    deleteStudent();
                     break;
-                case 6:
-                    break;
-
+                default:
+                    System.out.println("option doesn't exist");
             }
 
         }while (choice!=6);
@@ -102,8 +102,15 @@ public class CollageManagementSystem {
             System.out.println("Student not found!");
         }
     }
+    static void  updateStudent(){
+        System.out.println("enter the student id update");
+        int id = sc.nextInt();
+        searchStudent();
+    }
 
-
+    static void deleteStudent(){
+        System.out.println("enter");
+    }
 
                 }
 
