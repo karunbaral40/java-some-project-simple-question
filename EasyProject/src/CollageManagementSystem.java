@@ -52,6 +52,7 @@ public class CollageManagementSystem {
                     ViewStudents();
                     break;
                 case 3:
+                    searchStudent();
                     break;
                 case 4:
                     break;
@@ -76,17 +77,36 @@ public class CollageManagementSystem {
                 System.out.println("student added sucessfully!!");
             }
 
-            static void ViewStudents(){
-        if(student.isEmpty()){
-            System.out.println(" list is empty!!!");
-        }
-        else{
-            for(Student s:student){
-                System.out.println(s);
+            static void ViewStudents() {
+                if (student.isEmpty()) {
+                    System.out.println(" list is empty!!!");
+                } else {
+                    for (Student s : student) {
+                        System.out.println(s);
+                    }
+                }
+            }
+
+    static void searchStudent() {
+        System.out.println("Enter the student id:");
+        int id = sc.nextInt();
+        boolean found = false;
+        for (Student s : student) {
+            if (s.student_id == id) {
+                System.out.println("Student found: " + s);
+                found = true;
+                break;
             }
         }
-
+        if (!found) {
+            System.out.println("Student not found!");
         }
     }
+
+
+
+                }
+
+
 
 
