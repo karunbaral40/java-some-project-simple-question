@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //collage detils keeping system
@@ -27,8 +28,9 @@ class courses{
 
 
 public class CollageManagementSystem {
-   static ArrayList<Student> student=new ArrayList<>();
-   static Scanner sc=new Scanner(System.in);
+    static ArrayList<Student> student = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         System.out.println("1.student \n2.teacher \n3. account");
@@ -69,29 +71,40 @@ public class CollageManagementSystem {
 
         }
     }
-        static void addStudent() {
+
+    static void addStudent() {
+        try {
             System.out.println("Enter the id");
-            int id=sc.nextInt();
+            int id = sc.nextInt();
             sc.nextLine();
             System.out.println("Enter the student name");
-            String name=sc.nextLine();
+            String name = sc.nextLine();
             System.out.println("Enter the student fee");
-            double fee=sc.nextDouble();
-            student.add(new Student(id,name,fee));
-                System.out.println("student added sucessfully!!");
-            }
+            double fee = sc.nextDouble();
+            student.add(new Student(id, name, fee));
+            System.out.println("student added sucessfully!!");
 
-            static void ViewStudents() {
-                if (student.isEmpty()) {
-                    System.out.println(" list is empty!!!");
-                } else {
-                    for (Student s : student) {
-                        System.out.println(s);
-                    }
+        } catch (InputMismatchException e) {
+            System.out.println(e);
+        }
+    }
+
+    static void ViewStudents() {
+        try {
+            if (student.isEmpty()) {
+                System.out.println(" list is empty!!!");
+            } else {
+                for (Student s : student) {
+                    System.out.println(s);
                 }
             }
+        } catch (InputMismatchException e) {
+            System.out.println(e);
+        }
+    }
 
-    static void searchStudent() {
+        static void searchStudent () {
+            try {
         System.out.println("Enter the student id:");
         int id = sc.nextInt();
         boolean found = false;
@@ -105,18 +118,31 @@ public class CollageManagementSystem {
         if (!found) {
             System.out.println("Student not found!");
         }
+    }catch(InputMismatchException e){
+        System.out.println(e);
     }
-    static void  updateStudent(){
-        System.out.println("enter the student id update");
-        int id = sc.nextInt();
-        searchStudent();
     }
 
-    static void deleteStudent(){
-        System.out.println("enter");
+    static void  updateStudent() {
+        try {
+            System.out.println("enter the student id update");
+            int id = sc.nextInt();
+            searchStudent();
+        }catch(InputMismatchException e){
+            System.out.println(e);
+        }
+        }
+
+        static void deleteStudent () {
+        try{
+            System.out.println("enter the student id");
+        }catch(InputMismatchException e){
+            System.out.println(e);
+        }
+
     }
 
-                }
+    }
 
 
 
