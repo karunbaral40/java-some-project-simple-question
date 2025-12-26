@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/Interface/Interface.iml" filepath="$PROJECT_DIR$/Interface/Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/InterfacePrograms/InterfacePrograms.iml" filepath="$PROJECT_DIR$/InterfacePrograms/InterfacePrograms.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interface/Interfaces/Interfaces.iml" filepath="$PROJECT_DIR$/Interface/Interfaces/Interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EasyProject/JavaDateAndTime/JavaDateAndTime.iml" filepath="$PROJECT_DIR$/EasyProject/JavaDateAndTime/JavaDateAndTime.iml" />
       <module fileurl="file://$PROJECT_DIR$/CollectionFramWork/LinkList/LinkList.iml" filepath="$PROJECT_DIR$/CollectionFramWork/LinkList/LinkList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Operators/Operators.iml" filepath="$PROJECT_DIR$/Operators/Operators.iml" />
       <module fileurl="file://$PROJECT_DIR$/POlymorphism/POlymorphism.iml" filepath="$PROJECT_DIR$/POlymorphism/POlymorphism.iml" />
