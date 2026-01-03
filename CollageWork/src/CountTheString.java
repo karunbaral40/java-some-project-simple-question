@@ -7,5 +7,7 @@ public class CountTheString {
 
         String s=sc.nextLine();
         System.out.println("the length of string is "+s.length());
+
+        System.out.println("Convert the uppercase"+  s.toUpperCase());
     }
 }

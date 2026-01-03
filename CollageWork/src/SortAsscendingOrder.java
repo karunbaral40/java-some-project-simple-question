@@ -1,4 +1,4 @@
-public class SortOrder {
+public class SortAsscendingOrder {
     public static void main(String[] args) {
         int[] arr = {1, 4, 3, 5, 2, 9, 8};
 
