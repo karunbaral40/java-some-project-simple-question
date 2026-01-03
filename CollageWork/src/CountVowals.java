@@ -15,7 +15,7 @@ public class CountVowals {
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
                 vlen++;
 
-            } else if (ch >= 'A' && ch <= 'Z') { // only count letters
+            } else if (ch >= 'A' && ch <= 'Z') {
                 clen++;
             }
 
