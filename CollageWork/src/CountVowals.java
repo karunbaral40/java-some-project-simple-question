@@ -10,6 +10,7 @@ public class CountVowals {
         String s1 = s.toUpperCase();
         int vlen = 0;
         int clen = 0;
+        int space=0;
         for (int i = 0; i < s.length(); i++) {
             char ch = s1.charAt(i);
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
@@ -17,10 +18,13 @@ public class CountVowals {
 
             } else if (ch >= 'A' && ch <= 'Z') {
                 clen++;
+            } else if (ch==' ') {
+                space++;
             }
 
         }
         System.out.println("no of vowel" + vlen);
         System.out.println("no of const" + clen);
+        System.out.println("no of space"+ space);
     }
 }
