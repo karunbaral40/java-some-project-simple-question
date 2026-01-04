@@ -12,12 +12,12 @@ public class findTheLargestAmongThree {
         System.out.println("enter the third number:");
         int num3=sc.nextInt();
         if (num1>num2&&num1>num3){
-            System.out.println("the first number is greatest");
+            System.out.println("first number is greatest");
         } else if (num2>num3) {
-            System.out.println("the second number is greatest");
+            System.out.println("second number is greatest");
         }
         else {
-            System.out.println("the third number is greatest");
+            System.out.println("third number is greatest");
         }
     }
 }

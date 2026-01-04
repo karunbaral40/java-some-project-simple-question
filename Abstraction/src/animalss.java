@@ -1,4 +1,4 @@
-
+//some example
 abstract class animal {
 
     abstract void sound();

@@ -1,5 +1,5 @@
 //Write an abstract class Shape with:
-//        - an abstract method double area()
+// - an abstract method double area()
 //- an abstract method double perimeter()
 
 
