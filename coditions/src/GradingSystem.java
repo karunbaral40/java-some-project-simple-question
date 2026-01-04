@@ -32,8 +32,11 @@ public class GradingSystem {
         else if(percentage>50&&percentage<60){
             System.out.println("C+");
         }
-        else if(percentage>35&&percentage<50){
+        else if(percentage>40&&percentage<50){
             System.out.println("C");
+        }
+        else if(percentage>35&&percentage<40){
+            System.out.println("D");
         }
         else {
             System.out.println("fail");
