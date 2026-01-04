@@ -13,6 +13,7 @@ public class equalWithOutUsingOperation {
         // 1. Check if they point to the same memory (optimization)
         if (s1 == s2) {
             return true;
+            
         }
 
         // 2. Check for nulls or different lengths
