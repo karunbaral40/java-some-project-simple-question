@@ -6,14 +6,14 @@ public class PositiveNegetivZero {
         System.out.println("enter an number:");
         int num=sc.nextInt();
         if (num==0){
-            System.out.println("given number is zero.");
+            System.out.println("given number by you is zero.");
         }
         else if(num<0){
-            System.out.println("given number is negative");
+            System.out.println("given number by you  is negative");
 
         }
         else {
-            System.out.println("given number is positive");
+            System.out.println("given number by you  is positive");
         }
     }
 }
