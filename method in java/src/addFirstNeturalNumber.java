@@ -13,6 +13,6 @@ public class addFirstNeturalNumber {
         System.out.println("enter the natural number ");
         int num= sc.nextInt();
         int sum=netural(num);
-        System.out.println("the sum is"+sum);
+        System.out.println("the sum of the natural number  is:"+sum);
     }
 }

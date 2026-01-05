@@ -11,7 +11,7 @@ public class AddTwoNumber {
         int x=15;
         int y=20;
         int z=numbers(x,y);
-        System.out.println(z);
+        System.out.println("the sum of the two number is :"+z);
 
     }
 }
