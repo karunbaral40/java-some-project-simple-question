@@ -1,10 +1,10 @@
 import java.util.Scanner;
-//write a program to to calculate fabonish series using method
+//write a program  to calculate fabonish series using method
 public class FabonishSeriesMethod {
     static int fabonish(int x){
         int a=1;
         int b=0;
-        System.out.println("the fabonish series of given number is");
+        System.out.println("the fashionista series of given number is");
 
         for (int i = 0; i <=x ; i++) {
             System.out.println(b);

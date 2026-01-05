@@ -13,7 +13,7 @@ public class AvgUsingVarabileArgument {
     //write a java method to find an average of a set of a number passed as argument.
     public static void main(String[] args) {
         float sum=average(1,2,3,4);
-        System.out.println("the avrage of 1,2,3,4 is :" +sum/4);
+        System.out.println("the average of 1,2,3,4 is :" +sum/4);
 
     }
 }
