@@ -46,10 +46,14 @@ public class GradeChacker {
     public static void main(String[] args) {
         Grade gd=new Grade();
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter the marks");
-        gd.setMarks(sc.nextFloat());
+        try {
+            System.out.println("enter the marks");
+            gd.setMarks(sc.nextFloat());
 
-        gd.Greadcheck(gd.getMarks());
+            gd.Greadcheck(gd.getMarks());
+        }catch (InputMismatchException e){
+            System.out.println(e);
+        }
 
     }
 }
