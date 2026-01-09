@@ -28,13 +28,16 @@ public class GussTheNumbers {
 Scanner sc=new Scanner(System.in);
 Game game=new Game();
 boolean win=false;
-
-        System.out.println("i can have number between 1 to 100.have you any guts to guess it: ");
-        while(!win){
-            System.out.println("enter your guess");
-            int guess= sc.nextInt();
-            win = game.checkGuss(guess);
-        }
+try {
+    System.out.println("i can have number between 1 to 100.have you any guts to guess it: ");
+    while (!win) {
+        System.out.println("enter your guess");
+        int guess = sc.nextInt();
+        win = game.checkGuss(guess);
+    }
+}catch (InputMismatchException e){
+    System.out.println(e);
+}
 
     }
 }
