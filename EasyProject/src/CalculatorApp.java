@@ -38,11 +38,11 @@ class Calculator {
             System.out.println("The multiplication of the two numbers is: " + mul);
         }
         else if(op.equals("/")) {
-            if(num2 != 0) {
+            try {
                 int div = num1 / num2;
                 System.out.println("The division of the two numbers is: " + div);
-            } else {
-                System.out.println("Division by zero is not allowed.");
+            }catch (ArithmeticException e){
+                System.out.println("division by zero"+e);
             }
         }
         else {
@@ -55,17 +55,22 @@ public class CalculatorApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Calculator calc = new Calculator();
+        try {
 
-        System.out.println("Enter the first number: ");
-        calc.setNum1(sc.nextInt());
 
-        System.out.println("Enter the second number: ");
-        calc.setNum2(sc.nextInt());
+            System.out.println("Enter the first number: ");
+            calc.setNum1(sc.nextInt());
 
-        sc.nextLine(); // consume newline
-        System.out.println("Enter the operator (+, -, *, /): ");
-        String operator = sc.nextLine();
+            System.out.println("Enter the second number: ");
+            calc.setNum2(sc.nextInt());
 
-        calc.calculate(operator);
+            sc.nextLine(); // consume newline
+            System.out.println("Enter the operator (+, -, *, /): ");
+            String operator = sc.nextLine();
+
+            calc.calculate(operator);
+        }catch (InputMismatchException e){
+            System.out.println(e);
+        }
     }
 }

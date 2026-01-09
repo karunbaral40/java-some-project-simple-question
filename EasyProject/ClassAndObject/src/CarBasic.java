@@ -3,6 +3,7 @@
 //- a constructor
 //- a method displayInfo()
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class Car {
@@ -28,20 +29,25 @@ class Car {
 public class CarBasic {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        try {
 
-        System.out.println("Enter the model name");
-        String model = sc.nextLine();
+            System.out.println("Enter the model name");
+            String model = sc.nextLine();
 
-        System.out.println("Enter the Brand name");
-        String brand = sc.nextLine();
+            System.out.println("Enter the Brand name");
+            String brand = sc.nextLine();
 
-        System.out.println("Enter the release year");
-        int year = sc.nextInt();
+            System.out.println("Enter the release year");
+            int year = sc.nextInt();
 
-        // Create object using constructor
-        Car c = new Car(brand, model, year);
+            // Create object using constructor
+            Car c = new Car(brand, model, year);
 
-        // Call instance method
-        c.displayInfo();
+            // Call instance method
+            c.displayInfo();
+        }
+        catch (InputMismatchException e){
+            System.out.println(e);
+        }
     }
 }
