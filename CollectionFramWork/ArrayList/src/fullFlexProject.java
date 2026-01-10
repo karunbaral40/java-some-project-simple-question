@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // Student class
@@ -58,19 +59,22 @@ public class fullFlexProject  {
             }
         } while (choice != 6);
     }
-
     // Add Student
     static void addStudent() {
-        System.out.print("Enter ID: ");
-        int id = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Enter Name: ");
-        String name = sc.nextLine();
-        System.out.print("Enter Course: ");
-        String course = sc.nextLine();
+        try {
+            System.out.print("Enter ID: ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter Name: ");
+            String name = sc.nextLine();
+            System.out.print("Enter Course: ");
+            String course = sc.nextLine();
 
-        list.add(new Student(id, name, course));
-        System.out.println("Student Added Successfully!");
+            list.add(new Student(id, name, course));
+            System.out.println("Student Added Successfully!");
+        }catch(InputMismatchException e){
+            System.out.println(e);
+        }
     }
 
     // View Students
@@ -87,38 +91,46 @@ public class fullFlexProject  {
 
     // Search Student
     static void searchStudent() {
-        System.out.print("Enter ID to search: ");
-        int id = sc.nextInt();
+        try {
+            System.out.print("Enter ID to search: ");
+            int id = sc.nextInt();
 
-        for (Student s : list) {
-            if (s.id == id) {
-                System.out.println("Record Found:");
-                System.out.println("ID: " + s.id);
-                System.out.println("Name: " + s.name);
-                System.out.println("Course: " + s.course);
-                return;
+            for (Student s : list) {
+                if (s.id == id) {
+                    System.out.println("Record Found:");
+                    System.out.println("ID: " + s.id);
+                    System.out.println("Name: " + s.name);
+                    System.out.println("Course: " + s.course);
+                    return;
+                }
             }
+            System.out.println("Student Not Found!");
+        }catch (InputMismatchException e){
+            System.out.println(e);
         }
-        System.out.println("Student Not Found!");
     }
 
     // Update Student
     static void updateStudent() {
-        System.out.print("Enter ID to update: ");
-        int id = sc.nextInt();
+        try {
+            System.out.print("Enter ID to update: ");
+            int id = sc.nextInt();
 
-        for (Student s : list) {
-            if (s.id == id) {
-                sc.nextLine();
-                System.out.print("Enter New Name: ");
-                s.name = sc.nextLine();
-                System.out.print("Enter New Course: ");
-                s.course = sc.nextLine();
-                System.out.println("Record Updated Successfully!");
-                return;
+            for (Student s : list) {
+                if (s.id == id) {
+                    sc.nextLine();
+                    System.out.print("Enter New Name: ");
+                    s.name = sc.nextLine();
+                    System.out.print("Enter New Course: ");
+                    s.course = sc.nextLine();
+                    System.out.println("Record Updated Successfully!");
+                    return;
+                }
             }
+            System.out.println("Student Not Found!");
+        }catch (InputMismatchException e){
+            System.out.println(e);
         }
-        System.out.println("Student Not Found!");
     }
 
     // Delete Student
