@@ -24,7 +24,7 @@ class Calculator {
         this.num2 = num2;
     }
 
-    public void calculate(String op) {
+    public void calculate(String op) throws Exception{
         if(op.equals("+")) {
             int sum = num1 + num2;
             System.out.println("The sum of the two numbers is: " + sum);
@@ -48,6 +48,7 @@ class Calculator {
         else {
             System.out.println("This operator is not valid");
         }
+        throw new Exception("Invalid operator: " + op);
     }
 }
 
