@@ -44,6 +44,17 @@ public class demo2 {
 //                        +resultSet.getInt("age")+"\nmarks : "+resultSet.getDouble("marks"));
 //            }
      //👉❌update method
+//             String Query="update students marks=? where id=?";
+//             PreparedStatement preparedStatement=connection.prepareStatement(Query);
+//             preparedStatement.setDouble(1,99.5);
+//             preparedStatement.setInt(2,13);
+//             int roesAffected=preparedStatement.executeUpdate();
+//
+//             if (roesAffected>0){
+//                 System.out.println("🤘updated successfully");
+//             }else {
+//                 System.out.println("❌doesn't update ");
+//             }
 //
             //👉❌Delete student
 //            String Query="delete from students where id=?";
