@@ -12,7 +12,7 @@ public class first {
 //        frame.setSize(420, 420); // 👉 sets x-dimension and y-dimension of frame
 //        frame.setVisible(true); // 👉 make frame visible
 //
-//        ImageIcon image = new ImageIcon("logo.png"); // 👉 import image in java
+//        ImageIcon image = new ImageIcon("C:\Users\Acer\OneDrive\Documents\Desktop\chatgptQustionForJava\java-swing\logo.png"); // 👉 import image in java
 //        frame.setIconImage(image.getImage()); // 👉 change icon in frame
 //        frame.getContentPane().setBackground(Color.GREEN); // 👉 set background color
 //       frame.getContentPane().setBackground(new Color(150,155,255));//👉making custom color rgb
