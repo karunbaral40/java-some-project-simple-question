@@ -4,7 +4,7 @@ import java.awt.*;
 public class Third {
     public static void main(String[] args) {
         //👉JPanel = A GUI component that function as a container to hold other components
-        ImageIcon image= new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\PP Naruto Kawai.jpeg");
+        ImageIcon image= new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\icons8-thumb-48.png");
 JLabel label=new JLabel();
 label.setText("HI!");
 label.setIcon(image);
