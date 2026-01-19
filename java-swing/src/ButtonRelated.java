@@ -8,7 +8,7 @@ public class ButtonRelated extends JFrame implements ActionListener {
     JLabel label;
 ButtonRelated () {
     label=new JLabel();
-    ImageIcon icon=new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\PP Naruto Kawai.jpeg");
+    ImageIcon icon=new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\direction_14878073.png");
 
      button = new JButton();
     button.setBounds(100, 100, 250, 100);
