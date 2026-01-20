@@ -8,8 +8,8 @@ public class ButtonRelated extends JFrame implements ActionListener {
     JLabel label;
 ButtonRelated () {
     label=new JLabel();
-    ImageIcon icon=new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\direction_14878073.png");
-
+    ImageIcon icon=new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\icons8-anime-emoji-100.png");
+    ImageIcon icon2=new ImageIcon("-");
      button = new JButton();
     button.setBounds(100, 100, 250, 100);
     button.addActionListener(this);
@@ -19,6 +19,7 @@ ButtonRelated () {
     this.setLayout(null);
     this.setVisible(true);
     this.add(button);
+    this.add(label);
     button.setText("click me👍");
     button.setFocusable(false);
 button.setIcon(icon);
