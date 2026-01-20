@@ -9,7 +9,7 @@ public class ButtonRelated extends JFrame implements ActionListener {
 ButtonRelated () {
     label=new JLabel();
     ImageIcon icon=new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\icons8-anime-emoji-100.png");
-    ImageIcon icon2=new ImageIcon("-");
+    ImageIcon icon2=new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\small (3).png");
      button = new JButton();
     button.setBounds(100, 100, 250, 100);
     button.addActionListener(this);
