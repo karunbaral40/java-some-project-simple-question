@@ -3,7 +3,7 @@ class over1{
         System.out.println("the value of a is:"+a);
     }
     void first(int a,int b){
-        System.out.println("the value of a is:"+a+"  " +b);
+        System.out.println("the value of a and b are:"+a+"  " +b);
     }
 }
 public class MethodOverloding {
