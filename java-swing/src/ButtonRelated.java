@@ -11,7 +11,7 @@ ButtonRelated () {
     ImageIcon icon2=new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\small (3).png");
     label=new JLabel();
     label.setIcon(icon2);
-    label.setBounds(150,250,150,150);
+    label.setBounds(150,250,500,500);
     label.setVisible(false);
         button = new JButton();
     button.setBounds(100, 100, 250, 100);
@@ -38,7 +38,7 @@ button.setBorder(BorderFactory.createEtchedBorder());
     public void actionPerformed(ActionEvent e)  {
 if (e.getSource()==button){
 //    System.out.println("poo");
-    
+    label.setVisible(true);
 }
     }
 }
