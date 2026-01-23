@@ -45,6 +45,7 @@
       <module fileurl="file://$PROJECT_DIR$/loops/loops.iml" filepath="$PROJECT_DIR$/loops/loops.iml" />
       <module fileurl="file://$PROJECT_DIR$/method in java/method in java.iml" filepath="$PROJECT_DIR$/method in java/method in java.iml" />
       <module fileurl="file://$PROJECT_DIR$/string/string.iml" filepath="$PROJECT_DIR$/string/string.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swing-project/swing-project.iml" filepath="$PROJECT_DIR$/swing-project/swing-project.iml" />
       <module fileurl="file://$PROJECT_DIR$/Thread/thread by extending Thread/thread by extending Thread.iml" filepath="$PROJECT_DIR$/Thread/thread by extending Thread/thread by extending Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/Thread/thread by implementing Runnable/thread by implementing Runnable.iml" filepath="$PROJECT_DIR$/Thread/thread by implementing Runnable/thread by implementing Runnable.iml" />
     </modules>
