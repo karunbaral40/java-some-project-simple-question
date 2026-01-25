@@ -4,7 +4,7 @@ class Student{
         this.name=name;
     }
 }
-class Person extends Student{
+class   Person extends Student{
     int age;
     Person(String name, int age){
         super(name);
