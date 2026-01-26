@@ -21,8 +21,14 @@ public class DilogBoxes {
 //}else {
 //    JOptionPane.showMessageDialog(null,"How dare you to cancel my Question!!!","cancel",JOptionPane.ERROR_MESSAGE);
 //}
-        String name=JOptionPane.showInputDialog("what is your name?");
-        System.out.println("Hello!"+name);
-        JOptionPane.showOptionDialog(null,"yor are awesome","secret massage",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,null,null,0);
+//        String name=JOptionPane.showInputDialog("what is your name?");
+//        System.out.println("Hello!"+name);
+        String []responce={"no you are awesome!","thank you!","blush😊","hehe"};
+        JOptionPane.showOptionDialog(null,
+                "yor are awesome",
+                "secret massage",JOptionPane.YES_NO_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                responce,0);
     }
 }
