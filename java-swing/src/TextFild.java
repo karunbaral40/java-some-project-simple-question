@@ -16,6 +16,10 @@ button.addActionListener(this);
         textField.setFont(new Font("Consolas",Font.PLAIN,30));
         textField.setForeground(new Color(0x00FF00));
         textField.setBackground(Color.BLACK);
+          textField.setCaretColor(Color.white);
+          textField.setText("UserName");
+//          textField.setEditable(false);
+
         this.add(textField);
         this.add(button);
         this.pack();
@@ -24,6 +28,7 @@ button.addActionListener(this);
     @Override
     public void actionPerformed(ActionEvent e) {
 if (e.getSource()==button){
+    button.setEnabled(false);
     System.out.println( "Welcome"+textField.getText());
 }
 
