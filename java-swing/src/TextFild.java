@@ -10,7 +10,7 @@ class MyClass extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
       button=new JButton("submit");
-button.addActionListener(this);
+      button.addActionListener(this);
          textField =new JTextField();
         textField.setPreferredSize(new Dimension(250,40));
         textField.setFont(new Font("Consolas",Font.PLAIN,30));
