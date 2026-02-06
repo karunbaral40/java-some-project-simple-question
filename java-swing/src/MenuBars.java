@@ -29,7 +29,7 @@ class Halku extends JFrame implements ActionListener {
         loadItem.setMnemonic(KeyEvent.VK_L);
         saveItem.setMnemonic(KeyEvent.VK_S);
         exitItem.setMnemonic(KeyEvent.VK_E);
-        
+
         fileMenu.add(loadItem);
         fileMenu.add(saveItem);
         fileMenu.add(exitItem);
