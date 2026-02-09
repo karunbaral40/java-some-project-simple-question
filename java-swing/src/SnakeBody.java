@@ -33,7 +33,7 @@ y[i]=100;
         this.requestFocusInWindow();
         this.addKeyListener(new MyKeyAdapter());
 
-                timer=new Timer(40,this);
+                timer=new Timer(100,this);
         timer.start();
     }
     public void paintComponent(Graphics g){
@@ -48,7 +48,7 @@ y[i]=100;
               g.fillRect(x[i],y[i],UnitSize,UnitSize);
           }
           g.setColor(Color.white);
-          g.setFont(new Font("MV Boli",Font.BOLD,10));
+          g.setFont(new Font("MV Boli",Font.BOLD,20));
           g.drawString("Score :-"+score,20,20);
 
       }else{
@@ -90,7 +90,7 @@ y[i]=100;
         public void checkFood () {
             if (x[0] == foodX && y[0] == foodY) {
                 body_Part++;
-                score++;
+                score ++ ;
                 swanFood();
             }
         }
