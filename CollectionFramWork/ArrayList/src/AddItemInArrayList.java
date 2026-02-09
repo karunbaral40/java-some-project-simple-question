@@ -8,11 +8,7 @@ public class AddItemInArrayList {
         l1.add(3);
         l1.add(4);
         l1.add(5);
-        for (int i = 0; i <l1.size() ; i++) {
-            System.out.print(l1.get(i));
-            System.out.print(", ");
-
-        }
+        System.out.println(l1);
 
     }
 }

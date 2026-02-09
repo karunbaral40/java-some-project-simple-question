@@ -4,7 +4,9 @@ public class classExample {
             ArrayList<String> list = new ArrayList<>();
             list.add("Java");
             list.add("Python");
-
+            list.add("java");
+            list.add("Python");
+            list.add("java");
             System.out.println(list);
         }
     }
