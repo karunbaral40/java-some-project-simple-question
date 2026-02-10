@@ -2,13 +2,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalTime;
 
 public class Grphics extends JPanel implements ActionListener {
 
     Timer timer;
-    int hrs=0;
-    int min=0;
-    int seconds = 0;
+    LocalTime now=LocalTime.now();
+
+    int hours=now.getHour();
+    int minute=now.getMinute();
+    int seconds = now.getSecond();
 
     Grphics() {
         this.setPreferredSize(new Dimension(500, 500));
@@ -25,19 +28,19 @@ public class Grphics extends JPanel implements ActionListener {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.WHITE);
         g2d.setFont(new Font("MV Boli", Font.BOLD, 25));
-        g2d.drawString(hrs+":"+min+":"+ seconds, 200, 200);
+        String time=String.format("%02d:%02d:%02d",hours,minute,seconds);
+        g2d.drawString(time,200,200);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        seconds++;
-        if(seconds==60){
-            min++;
-            if (min==60){
-                hrs++;
-            }
+        now=LocalTime.now();
 
-        }
+        hours=now.getHour();
+        minute=now.getMinute();
+        seconds = now.getSecond();
+
+
         repaint();
     }
 }
