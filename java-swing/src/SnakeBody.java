@@ -3,240 +3,234 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
-/* ===============================
-   Main Class (Game Launcher)
-   =============================== */
+import static java.awt.Color.*;
+
 public class SnakeBody {
-
     public static void main(String[] args) {
-
         JFrame frame = new JFrame("Snake Game");
-        GamePanel gamePanel = new GamePanel();
+        frame.getContentPane().setBackground(new Color(30, 30, 30));
+        frame.setLayout(new GridBagLayout());
 
+        GamePanel gamePanel = new GamePanel();
         frame.add(gamePanel);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
+        frame.setResizable(true);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
 }
 
-
-/* ===============================
-   Game Panel (All Game Logic)
-   =============================== */
 class GamePanel extends JPanel implements ActionListener {
-
-    // ===== Constants =====
     private final int SCREEN_WIDTH = 500;
     private final int SCREEN_HEIGHT = 500;
     private final int UNIT_SIZE = 20;
     private final int GAME_UNITS = (SCREEN_WIDTH * SCREEN_HEIGHT) / UNIT_SIZE;
-    private final int DELAY = 200  ;
+    private final int DELAY = 150;
+    private final int BORDER_WIDTH = 20;
 
-    // ===== Snake Data =====
     private final int[] x = new int[GAME_UNITS];
     private final int[] y = new int[GAME_UNITS];
     private int bodyParts = 4;
-
-    // ===== Game Data =====
-    private int foodX;
-    private int foodY;
-    private int score = 0;
+    private int foodX, foodY, score = 0;
     private char direction = 'R';
     private boolean running = false;
-
     private Timer timer;
     private Random random;
+    private JButton restartButton;
 
-    /* ===== Constructor ===== */
+    // --- Background Image Variable ---
+    private Image backgroundImage;
+
     GamePanel() {
-
         random = new Random();
+        // Load the image from your local path
+        backgroundImage = new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\Gemini_Generated_Image_in8lotin8lotin8l.png").getImage();
 
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-        this.setBackground(Color.black);
         this.setFocusable(true);
+        this.setLayout(null);
         this.addKeyListener(new MyKeyAdapter());
+
+        restartButton = new JButton("Restart Game");
+        restartButton.setBounds(SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 + 100, 150, 40);
+        restartButton.setFocusable(false);
+        restartButton.addActionListener(e -> {
+            restartButton.setVisible(false);
+            restartGame();
+        });
+        this.add(restartButton);
+        restartButton.setVisible(false);
 
         startGame();
     }
 
-    /* ===== Start Game ===== */
     private void startGame() {
-
-        // Initial Snake Position
         for (int i = 0; i < bodyParts; i++) {
             x[i] = 100 - (i * UNIT_SIZE);
             y[i] = 100;
         }
-
         spawnFood();
-
         running = true;
         timer = new Timer(DELAY, this);
         timer.start();
     }
 
-    /* ===== Paint ===== */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+
+        // --- Draw the Background Image ---
+        if (backgroundImage != null) {
+            g.drawImage(backgroundImage, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, this);
+        } else {
+            // Fallback gradient if image fails to load
+            Graphics2D g2d = (Graphics2D) g;
+            GradientPaint gp = new GradientPaint(0, 0, new Color(10, 20, 40), 0, SCREEN_HEIGHT, black);
+            g2d.setPaint(gp);
+            g2d.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        }
+
         draw(g);
     }
 
     private void draw(Graphics g) {
-
         if (running) {
+            // Draw Border
+            g.setColor(new Color(144, 238, 144, 30)); // Added transparency (150) to see image through border
+            g.fillRect(0, 0, SCREEN_WIDTH, BORDER_WIDTH);
+            g.fillRect(0, SCREEN_HEIGHT - BORDER_WIDTH, SCREEN_WIDTH, BORDER_WIDTH);
+            g.fillRect(0, 0, BORDER_WIDTH, SCREEN_HEIGHT);
+            g.fillRect(SCREEN_WIDTH - BORDER_WIDTH, 0, BORDER_WIDTH, SCREEN_HEIGHT);
 
             // Draw Food
-            g.setColor(Color.red);
-            g.fillRect(foodX, foodY, UNIT_SIZE, UNIT_SIZE);
+            g.setColor(red);
+            g.fillOval(foodX, foodY, UNIT_SIZE, UNIT_SIZE);
 
             // Draw Snake
             for (int i = 0; i < bodyParts; i++) {
                 if (i == 0) {
-                    g.setColor(Color.green); // head
+                    g.setColor(new Color(0, 255, 255));
+                    g.fillOval(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+                    g.setColor(BLACK);
+                    drawEyes(g, x[i], y[i]);
                 } else {
-                    g.setColor(new Color(45, 180, 0));
+                    g.setColor(new Color(0, 150, 100));
+                    g.fillOval(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
-                g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
             }
 
-            // Draw Score
-            g.setColor(Color.white);
-            g.setFont(new Font("Arial", Font.BOLD, 20));
-            g.drawString("Score: " + score, 20, 30);
-        }
-        else {
+            g.setColor(white);
+            g.setFont(new Font("Arial", Font.BOLD, 18));
+            g.drawString("Score: " + score, BORDER_WIDTH + 10, BORDER_WIDTH + 20);
+        } else {
             gameOver(g);
         }
     }
 
-    /* ===== Move Snake ===== */
-    private void move() {
+    // [The rest of your move, spawnFood, checkFood, checkCollision, gameOver, restartGame, and MyKeyAdapter methods remain the same]
 
-        // Move body
-        for (int i = bodyParts - 1; i > 0; i--) {
+    private void drawEyes(Graphics g, int headX, int headY) {
+        int eyeSize = 4;
+        switch (direction) {
+            case 'R':
+                g.fillOval(headX + 12, headY + 4, eyeSize, eyeSize);
+                g.fillOval(headX + 12, headY + 12, eyeSize, eyeSize);
+                break;
+            case 'L':
+                g.fillOval(headX + 4, headY + 4, eyeSize, eyeSize);
+                g.fillOval(headX + 4, headY + 12, eyeSize, eyeSize);
+                break;
+            case 'U':
+                g.fillOval(headX + 4, headY + 4, eyeSize, eyeSize);
+                g.fillOval(headX + 12, headY + 4, eyeSize, eyeSize);
+                break;
+            case 'D':
+                g.fillOval(headX + 4, headY + 12, eyeSize, eyeSize);
+                g.fillOval(headX + 12, headY + 12, eyeSize, eyeSize);
+                break;
+        }
+    }
+
+    private void move() {
+        for (int i = bodyParts; i > 0; i--) {
             x[i] = x[i - 1];
             y[i] = y[i - 1];
         }
-
-        // Move head
         switch (direction) {
-            case 'R': x[0] += UNIT_SIZE; break;
-            case 'L': x[0] -= UNIT_SIZE; break;
             case 'U': y[0] -= UNIT_SIZE; break;
             case 'D': y[0] += UNIT_SIZE; break;
+            case 'L': x[0] -= UNIT_SIZE; break;
+            case 'R': x[0] += UNIT_SIZE; break;
         }
     }
 
-    /* ===== Spawn Food ===== */
     private void spawnFood() {
-        foodX = random.nextInt(SCREEN_WIDTH / UNIT_SIZE) * UNIT_SIZE;
-        foodY = random.nextInt(SCREEN_HEIGHT / UNIT_SIZE) * UNIT_SIZE;
+        int playableWidth = SCREEN_WIDTH - (BORDER_WIDTH * 2);
+        int playableHeight = SCREEN_HEIGHT - (BORDER_WIDTH * 2);
+        foodX = (random.nextInt(playableWidth / UNIT_SIZE) * UNIT_SIZE) + UNIT_SIZE;
+        foodY = (random.nextInt(playableHeight / UNIT_SIZE) * UNIT_SIZE) + UNIT_SIZE;
     }
 
-    /* ===== Check Food ===== */
     private void checkFood() {
-        if (x[0] == foodX && y[0] == foodY) {
+        if (Math.abs(x[0] - foodX) < UNIT_SIZE && Math.abs(y[0] - foodY) < UNIT_SIZE) {
             bodyParts++;
-            score += bodyParts * 2;
+            score++;
             spawnFood();
         }
     }
 
-    /* ===== Check Collision ===== */
     private void checkCollision() {
-
-        // Self collision
-        for (int i = 1; i < bodyParts; i++) {
-            if (x[0] == x[i] && y[0] == y[i]) {
-                running = false;
-            }
+        for (int i = bodyParts; i > 0; i--) {
+            if ((x[0] == x[i]) && (y[0] == y[i])) running = false;
         }
-
-        // Wall collision
-        if (x[0] < 0 || x[0] >= SCREEN_WIDTH ||
-                y[0] < 0 || y[0] >= SCREEN_HEIGHT) {
+        if (x[0] < BORDER_WIDTH || x[0] >= SCREEN_WIDTH - BORDER_WIDTH ||
+                y[0] < BORDER_WIDTH || y[0] >= SCREEN_HEIGHT - BORDER_WIDTH) {
             running = false;
         }
-
-        if (!running) {
-            timer.stop();
-        }
+        if (!running) timer.stop();
     }
 
-    /* ===== Game Over Screen ===== */
     private void gameOver(Graphics g) {
-
-        g.setColor(Color.red);
-        g.setFont(new Font("Arial", Font.BOLD, 40));
-        g.drawString("GAME OVER", SCREEN_WIDTH / 2 - 140, SCREEN_HEIGHT / 2);
-
+        g.setColor(red);
+        g.setFont(new Font("Arial", Font.BOLD, 50));
+        FontMetrics m = getFontMetrics(g.getFont());
+        g.drawString("GAME OVER", (SCREEN_WIDTH - m.stringWidth("GAME OVER")) / 2, SCREEN_HEIGHT / 2);
+        g.setColor(white);
         g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("Final Score: " + score,
-                SCREEN_WIDTH / 2 - 80,
-                SCREEN_HEIGHT / 2 + 40);
-
-        g.drawString("Press ENTER to Restart",
-                SCREEN_WIDTH / 2 - 110,
-                SCREEN_HEIGHT / 2 + 80);
+        g.drawString("Press ENTER to Restart", (SCREEN_WIDTH - getFontMetrics(g.getFont()).stringWidth("Press ENTER to Restart")) / 2, SCREEN_HEIGHT / 2 + 50);
+        restartButton.setVisible(true);
     }
 
-    /* ===== Restart ===== */
     private void restartGame() {
-
         bodyParts = 4;
         score = 0;
         direction = 'R';
-
+        restartButton.setVisible(false);
+        if(timer != null) timer.stop();
         startGame();
+        this.requestFocusInWindow();
     }
 
-    /* ===== Game Loop ===== */
     @Override
     public void actionPerformed(ActionEvent e) {
-
         if (running) {
             move();
             checkFood();
             checkCollision();
         }
-
         repaint();
     }
 
-    /* ===== Key Listener ===== */
     private class MyKeyAdapter extends KeyAdapter {
-
         @Override
         public void keyPressed(KeyEvent e) {
-
             switch (e.getKeyCode()) {
-
-                case KeyEvent.VK_LEFT:
-                    if (direction != 'R') direction = 'L';
-                    break;
-
-                case KeyEvent.VK_RIGHT:
-                    if (direction != 'L') direction = 'R';
-                    break;
-
-                case KeyEvent.VK_UP:
-                    if (direction != 'D') direction = 'U';
-                    break;
-
-                case KeyEvent.VK_DOWN:
-                    if (direction != 'U') direction = 'D';
-                    break;
-
-                case KeyEvent.VK_ENTER:
-                    if (!running) {
-                        restartGame();
-                    }
-                    break;
+                case KeyEvent.VK_LEFT: if (direction != 'R') direction = 'L'; break;
+                case KeyEvent.VK_RIGHT: if (direction != 'L') direction = 'R'; break;
+                case KeyEvent.VK_UP: if (direction != 'D') direction = 'U'; break;
+                case KeyEvent.VK_DOWN: if (direction != 'U') direction = 'D'; break;
+                case KeyEvent.VK_ENTER: if (!running) restartGame(); break;
             }
         }
     }
