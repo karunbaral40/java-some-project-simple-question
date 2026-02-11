@@ -38,6 +38,7 @@ class GamePanel extends JPanel implements ActionListener {
     private Timer timer;
     private Random random;
     private JButton restartButton;
+    private Image foodImage;
 
     // --- Background Image Variable ---
     private Image backgroundImage;
@@ -46,6 +47,9 @@ class GamePanel extends JPanel implements ActionListener {
         random = new Random();
         // Load the image from your local path
         backgroundImage = new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\Gemini_Generated_Image_in8lotin8lotin8l.png").getImage();
+
+        ImageIcon icon = new ImageIcon("C:\\Users\\Acer\\OneDrive\\Documents\\Desktop\\chatgptQustionForJava\\java-swing\\src\\images__1_-removebg-preview.png");
+        foodImage = icon.getImage().getScaledInstance(UNIT_SIZE, UNIT_SIZE, Image.SCALE_SMOOTH);
 
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setFocusable(true);
@@ -96,31 +100,38 @@ class GamePanel extends JPanel implements ActionListener {
 
     private void draw(Graphics g) {
         if (running) {
-            // Draw Border
-            g.setColor(new Color(144, 238, 144, 30)); // Added transparency (150) to see image through border
+            // --- 1. Draw Invisible/Light Green Border ---
+            g.setColor(new Color(144, 238, 144, 30));
             g.fillRect(0, 0, SCREEN_WIDTH, BORDER_WIDTH);
             g.fillRect(0, SCREEN_HEIGHT - BORDER_WIDTH, SCREEN_WIDTH, BORDER_WIDTH);
             g.fillRect(0, 0, BORDER_WIDTH, SCREEN_HEIGHT);
             g.fillRect(SCREEN_WIDTH - BORDER_WIDTH, 0, BORDER_WIDTH, SCREEN_HEIGHT);
 
-            // Draw Food
-            g.setColor(red);
-            g.fillOval(foodX, foodY, UNIT_SIZE, UNIT_SIZE);
+            // --- 2. Draw Image Food ---
+            if (foodImage != null) {
+                // Draws your .jpg file at the food coordinates
+                g.drawImage(foodImage, foodX, foodY, this);
+            } else {
+                // Fallback if the image path is wrong
+                g.setColor(Color.RED);
+                g.fillOval(foodX, foodY, UNIT_SIZE, UNIT_SIZE);
+            }
 
-            // Draw Snake
+            // --- 3. Draw Snake (Cyan & Mint) ---
             for (int i = 0; i < bodyParts; i++) {
                 if (i == 0) {
-                    g.setColor(new Color(0, 255, 255));
+                    g.setColor(new Color(0, 255, 255)); // Bright Cyan Head
                     g.fillOval(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
-                    g.setColor(BLACK);
+                    g.setColor(Color.BLACK); // Eyes
                     drawEyes(g, x[i], y[i]);
                 } else {
-                    g.setColor(new Color(0, 150, 100));
+                    g.setColor(new Color(0, 150, 100)); // Darker Mint Body
                     g.fillOval(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
 
-            g.setColor(white);
+            // --- 4. Draw Score ---
+            g.setColor(Color.WHITE);
             g.setFont(new Font("Arial", Font.BOLD, 18));
             g.drawString("Score: " + score, BORDER_WIDTH + 10, BORDER_WIDTH + 20);
         } else {
@@ -192,13 +203,15 @@ class GamePanel extends JPanel implements ActionListener {
     }
 
     private void gameOver(Graphics g) {
+        g.setFont(new Font("Arial", Font.BOLD, 30));
+        FontMetrics m1 = getFontMetrics(g.getFont());
+
+        g.drawString("Final Score: " + score, (SCREEN_WIDTH - m1.stringWidth("Final Score: " + score)) / 2, SCREEN_HEIGHT / 2 - 80);
         g.setColor(red);
         g.setFont(new Font("Arial", Font.BOLD, 50));
         FontMetrics m = getFontMetrics(g.getFont());
         g.drawString("GAME OVER", (SCREEN_WIDTH - m.stringWidth("GAME OVER")) / 2, SCREEN_HEIGHT / 2);
         g.setColor(white);
-        g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("Press ENTER to Restart", (SCREEN_WIDTH - getFontMetrics(g.getFont()).stringWidth("Press ENTER to Restart")) / 2, SCREEN_HEIGHT / 2 + 50);
         restartButton.setVisible(true);
     }
 
