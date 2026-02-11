@@ -2,8 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class LogicAndGraphics extends JPanel implements ActionListener {
+public class LogicAndGraphics extends JPanel implements ActionListener  {
 
     JTextField textField;
 
@@ -87,7 +89,59 @@ public class LogicAndGraphics extends JPanel implements ActionListener {
             buttonPanel.add(btn);
         }
         this.add(buttonPanel, BorderLayout.CENTER);
+
+        addKeyBinding("0",button0);
+        addKeyBinding("1",button1);
+        addKeyBinding("2",button2);
+        addKeyBinding("3",button3);
+        addKeyBinding("4",button4);
+        addKeyBinding("5",button5);
+        addKeyBinding("6",button6);
+        addKeyBinding("7",button7);
+        addKeyBinding("8",button8);
+        addKeyBinding("9",button9);
+        addKeyBinding("PLUS",plusButton);
+        addKeyBinding("MINUS",minusButton);
+        addKeyBinding("SLASH",divisionButton);
+        addKeyBinding("ASTERISK",MultiButton);
+        addKeyBinding("BACK_SPACE", cutButton);
+
+
+        addKeyBinding("PERIOD",dotButton);
+        addKeyBinding("ENTER",equalButton);
+        addKeyBinding("BACK_SPACE",cutButton);
+        addKeyBinding("ESCAPE",clearButton);
+
+        addKeyBinding("NUMPAD0",button0);
+        addKeyBinding("NUMPAD1",button1);
+        addKeyBinding("NUMPAD2",button2);
+        addKeyBinding("NUMPAD3",button3);
+        addKeyBinding("NUMPAD4",button4);
+        addKeyBinding("NUMPAD5",button5);
+        addKeyBinding("NUMPAD6",button6);
+        addKeyBinding("NUMPAD7",button7);
+        addKeyBinding("NUMPAD8",button8);
+        addKeyBinding("NUMPAD9",button9);
+        addKeyBinding("ADD", plusButton);
+        addKeyBinding("SUBTRACT", minusButton);
+        addKeyBinding("MULTIPLY", MultiButton);
+        addKeyBinding("DIVIDE", divisionButton);
+
+
+
     }
+    private void addKeyBinding(String keyStroke, JButton button) {
+        this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
+                .put(KeyStroke.getKeyStroke(keyStroke), keyStroke);
+
+        this.getActionMap().put(keyStroke, new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                button.doClick();
+            }
+        });
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -184,4 +238,5 @@ if (!textField.getText().isEmpty()&&!textField.getText().matches(".*[+\\-*/%]$")
     startNewNumber = true;
 }
     }
+
 }
