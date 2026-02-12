@@ -18,7 +18,11 @@ public class first {
 //       frame.getContentPane().setBackground(new Color(150,155,255));//👉making custom color rgb
 //        frame.getContentPane().setBackground(new Color(0X012345));//👉making custom color hexa
 
-      new myframe();
+      JFrame f=new JFrame();
+      f.setSize(300,300);
+      f.setVisible(true);
+
+//      new myframe();
 
   }
 
