@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Abstraction/src"/>
+	<classpathentry excluding="src/" kind="src" path="access modifiers"/>
+	<classpathentry kind="src" path="access modifiers/src"/>
+	<classpathentry kind="src" path="array/src"/>
+	<classpathentry kind="src" path="coditions/src"/>
+	<classpathentry kind="src" path="CollageWork/src"/>
+	<classpathentry kind="src" path="CollageWork/untitled/src"/>
+	<classpathentry kind="src" path="CollectionFramWork/ArrayDeque/src"/>
+	<classpathentry kind="src" path="CollectionFramWork/ArrayList/src"/>
+	<classpathentry kind="src" path="CollectionFramWork/LinkList/src"/>
+	<classpathentry kind="src" path="CollectionFramWork/src"/>
+	<classpathentry kind="src" path="CostumeClass/src"/>
+	<classpathentry kind="src" path="DatabaseWithJava/src"/>
+	<classpathentry kind="src" path="DataType/src"/>
+	<classpathentry kind="src" path="EasyProject/ClassAndObject/src"/>
+	<classpathentry kind="src" path="EasyProject/JavaDateAndTime/src"/>
+	<classpathentry kind="src" path="EasyProject/src"/>
+	<classpathentry kind="src" path="Encapsulations/src"/>
+	<classpathentry kind="src" path="Enum/src"/>
+	<classpathentry kind="src" path="ExceptinInJava/ExcptionClass/src"/>
+	<classpathentry kind="src" path="ExceptinInJava/FinallyKeyword/src"/>
+	<classpathentry kind="src" path="ExceptinInJava/src"/>
+	<classpathentry kind="src" path="ExceptinInJava/ThrowAndThrows/src"/>
+	<classpathentry kind="src" path="ExceptinInJava/TryAndCatch/src"/>
+	<classpathentry kind="src" path="Inheritance/Abstract class/src"/>
+	<classpathentry kind="src" path="Inheritance/InterfacePrograms/src"/>
+	<classpathentry kind="src" path="Inheritance/src"/>
+	<classpathentry kind="src" path="Interface/Interfaces/src"/>
+	<classpathentry kind="src" path="Interface/src"/>
+	<classpathentry kind="src" path="IO/src"/>
+	<classpathentry kind="src" path="java-swing/From Book/src"/>
+	<classpathentry kind="src" path="java-swing/src"/>
+	<classpathentry kind="src" path="json.java/src"/>
+	<classpathentry kind="src" path="LeetCodeSolve/src"/>
+	<classpathentry kind="src" path="loops/PattrenPrinting/src"/>
+	<classpathentry kind="src" path="loops/src"/>
+	<classpathentry kind="src" path="method in java/Recursive/src"/>
+	<classpathentry kind="src" path="method in java/src"/>
+	<classpathentry kind="src" path="Operators/src"/>
+	<classpathentry kind="src" path="Polymorphisms/src"/>
+	<classpathentry kind="src" path="Practice-Qustion/src"/>
+	<classpathentry kind="src" path="PrintStatement/src"/>
+	<classpathentry kind="src" path="string/src"/>
+	<classpathentry kind="src" path="swing-project/Calculator/src"/>
+	<classpathentry kind="src" path="swing-project/DigitalClock/src"/>
+	<classpathentry kind="src" path="swing-project/src"/>
+	<classpathentry kind="src" path="swing-project/StopWatch/src"/>
+	<classpathentry kind="src" path="Thread/thread by extending Thread/src"/>
+	<classpathentry kind="src" path="Thread/thread by implementing Runnable/src"/>
+	<classpathentry kind="output" path="out/production/Abstraction"/>
+</classpath>
